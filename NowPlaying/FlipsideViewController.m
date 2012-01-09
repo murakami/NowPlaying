@@ -8,6 +8,9 @@
 
 #import "FlipsideViewController.h"
 
+@interface FlipsideViewController ()
+@end
+
 @implementation FlipsideViewController
 
 @synthesize delegate = _delegate;

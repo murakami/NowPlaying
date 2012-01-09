@@ -8,6 +8,9 @@
 
 #import "MainViewController.h"
 
+@interface MainViewController ()
+@end
+
 @implementation MainViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
