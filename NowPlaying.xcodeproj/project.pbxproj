@@ -24,6 +24,7 @@
 		56F7C53C14BB31F900F6AC6B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C51814BB31F800F6AC6B /* CoreData.framework */; };
 		56F7C54414BB31F900F6AC6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56F7C54214BB31F900F6AC6B /* InfoPlist.strings */; };
 		56F7C54714BB31F900F6AC6B /* NowPlayingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F7C54614BB31F900F6AC6B /* NowPlayingTests.m */; };
+		56F7C55114BB325A00F6AC6B /* README in Resources */ = {isa = PBXBuildFile; fileRef = 56F7C55014BB325A00F6AC6B /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,24 +43,25 @@
 		56F7C51414BB31F800F6AC6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		56F7C51614BB31F800F6AC6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		56F7C51814BB31F800F6AC6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		56F7C51C14BB31F800F6AC6B /* NowPlaying-Info.plist */ = {isa = PBXFileReference; path = "NowPlaying-Info.plist"; sourceTree = "<group>"; };
+		56F7C51C14BB31F800F6AC6B /* NowPlaying-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NowPlaying-Info.plist"; sourceTree = "<group>"; };
 		56F7C51E14BB31F800F6AC6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56F7C52014BB31F800F6AC6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		56F7C52214BB31F800F6AC6B /* NowPlaying-Prefix.pch */ = {isa = PBXFileReference; path = "NowPlaying-Prefix.pch"; sourceTree = "<group>"; };
-		56F7C52314BB31F800F6AC6B /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		56F7C52214BB31F800F6AC6B /* NowPlaying-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NowPlaying-Prefix.pch"; sourceTree = "<group>"; };
+		56F7C52314BB31F800F6AC6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		56F7C52414BB31F800F6AC6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		56F7C52714BB31F800F6AC6B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		56F7C52A14BB31F800F6AC6B /* NowPlaying.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NowPlaying.xcdatamodel; sourceTree = "<group>"; };
-		56F7C52C14BB31F800F6AC6B /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		56F7C52C14BB31F800F6AC6B /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		56F7C52D14BB31F900F6AC6B /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		56F7C52F14BB31F900F6AC6B /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		56F7C52F14BB31F900F6AC6B /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		56F7C53014BB31F900F6AC6B /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		56F7C53714BB31F900F6AC6B /* NowPlayingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NowPlayingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F7C53814BB31F900F6AC6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		56F7C54114BB31F900F6AC6B /* NowPlayingTests-Info.plist */ = {isa = PBXFileReference; path = "NowPlayingTests-Info.plist"; sourceTree = "<group>"; };
+		56F7C54114BB31F900F6AC6B /* NowPlayingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NowPlayingTests-Info.plist"; sourceTree = "<group>"; };
 		56F7C54314BB31F900F6AC6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		56F7C54514BB31F900F6AC6B /* NowPlayingTests.h */ = {isa = PBXFileReference; path = NowPlayingTests.h; sourceTree = "<group>"; };
+		56F7C54514BB31F900F6AC6B /* NowPlayingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NowPlayingTests.h; sourceTree = "<group>"; };
 		56F7C54614BB31F900F6AC6B /* NowPlayingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NowPlayingTests.m; sourceTree = "<group>"; };
+		56F7C55014BB325A00F6AC6B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		56F7C50314BB31F800F6AC6B = {
 			isa = PBXGroup;
 			children = (
+				56F7C55014BB325A00F6AC6B /* README */,
 				56F7C51A14BB31F800F6AC6B /* NowPlaying */,
 				56F7C53F14BB31F900F6AC6B /* NowPlayingTests */,
 				56F7C51114BB31F800F6AC6B /* Frameworks */,
@@ -131,6 +134,7 @@
 				56F7C53014BB31F900F6AC6B /* FlipsideViewController.m */,
 				56F7C52914BB31F800F6AC6B /* NowPlaying.xcdatamodeld */,
 				56F7C51B14BB31F800F6AC6B /* Supporting Files */,
+				56F7C55A14BB32B900F6AC6B /* Resources */,
 			);
 			path = NowPlaying;
 			sourceTree = "<group>";
@@ -163,6 +167,13 @@
 				56F7C54214BB31F900F6AC6B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56F7C55A14BB32B900F6AC6B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 			files = (
 				56F7C51F14BB31F800F6AC6B /* InfoPlist.strings in Resources */,
 				56F7C52814BB31F800F6AC6B /* MainStoryboard.storyboard in Resources */,
+				56F7C55114BB325A00F6AC6B /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
