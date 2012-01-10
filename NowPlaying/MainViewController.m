@@ -15,6 +15,9 @@
 @implementation MainViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize songTitle = _songTitle;
+@synthesize artist = _artist;
+@synthesize albumTitle = _albumTitle;
 
 - (void)didReceiveMemoryWarning
 {
@@ -50,9 +53,14 @@
     if (musicPlayer.nowPlayingItem) {
         NSLog(@"#nowplaying");
         NSString    *title = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
+        self.songTitle.text = title;
         NSLog(@"title: %@", title);
         NSString    *artist = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
+        self.artist.text = artist;
         NSLog(@"artist: %@", artist);
+        NSString    *albumTitle = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+        self.albumTitle.text = albumTitle;
+        NSLog(@"albumTitle: %@", albumTitle);
     }
     else {
         NSLog(@"nowPlayingItem is nil.");
@@ -87,6 +95,72 @@
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     }
+}
+
+#pragma mark - Tweet
+- (IBAction)tweet:(id)sender
+{
+    // Set up the built-in twitter composition view controller.
+    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+    
+    // Set the initial tweet text. See the framework for additional properties that can be set.
+    NSMutableString *str = [[NSMutableString alloc] initWithString:@"Hello. This is a tweet."];
+    MPMusicPlayerController *musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+    if (musicPlayer.nowPlayingItem) {
+        [str setString:@"#nowplaying"];
+        NSLog(@"#nowplaying");
+        NSString    *title = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
+        if (title) {
+            [str appendString:@" "];
+            [str appendString:title];
+        }
+        NSLog(@"title: %@", title);
+        NSString    *artist = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
+        if (artist) {
+            [str appendString:@" - "];
+            [str appendString:artist];
+        }
+        NSLog(@"artist: %@", artist);
+        NSString    *albumTitle = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+        if (albumTitle) {
+            [str appendString:@" ["];
+            [str appendString:albumTitle];
+            [str appendString:@"]"];
+        }
+        NSLog(@"albumTitle: %@", albumTitle);
+    }
+    else {
+        NSLog(@"nowPlayingItem is nil.");
+    }
+    [tweetViewController setInitialText:str];
+    
+    // Create the completion handler block.
+    [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+        NSString *output;
+        
+        switch (result) {
+            case TWTweetComposeViewControllerResultCancelled:
+                // The cancel button was tapped.
+                output = @"Tweet cancelled.";
+                break;
+            case TWTweetComposeViewControllerResultDone:
+                // The tweet was sent.
+                output = @"Tweet done.";
+                break;
+            default:
+                break;
+        }
+        
+        /*
+        [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
+        */
+        
+        // Dismiss the tweet composition view controller.
+        [self dismissModalViewControllerAnimated:YES];
+    }];
+    
+    // Present the tweet composition view controller modally.
+    [self presentModalViewController:tweetViewController animated:YES];
 }
 
 @end

@@ -26,6 +26,8 @@
 		56F7C54714BB31F900F6AC6B /* NowPlayingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F7C54614BB31F900F6AC6B /* NowPlayingTests.m */; };
 		56F7C55114BB325A00F6AC6B /* README in Resources */ = {isa = PBXBuildFile; fileRef = 56F7C55014BB325A00F6AC6B /* README */; };
 		56F7C55C14BB356B00F6AC6B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C55B14BB356B00F6AC6B /* MediaPlayer.framework */; };
+		56FF52FB14BC728C002336BB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FF52FA14BC728C002336BB /* Accounts.framework */; };
+		56FF52FE14BC7294002336BB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FF52FD14BC7294002336BB /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		56F7C54614BB31F900F6AC6B /* NowPlayingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NowPlayingTests.m; sourceTree = "<group>"; };
 		56F7C55014BB325A00F6AC6B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		56F7C55B14BB356B00F6AC6B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		56FF52FA14BC728C002336BB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		56FF52FD14BC7294002336BB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				56F7C51714BB31F800F6AC6B /* CoreGraphics.framework in Frameworks */,
 				56F7C51914BB31F800F6AC6B /* CoreData.framework in Frameworks */,
 				56F7C55C14BB356B00F6AC6B /* MediaPlayer.framework in Frameworks */,
+				56FF52FE14BC7294002336BB /* Twitter.framework in Frameworks */,
+				56FF52FB14BC728C002336BB /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +127,8 @@
 				56F7C51614BB31F800F6AC6B /* CoreGraphics.framework */,
 				56F7C51814BB31F800F6AC6B /* CoreData.framework */,
 				56F7C55B14BB356B00F6AC6B /* MediaPlayer.framework */,
+				56FF52FD14BC7294002336BB /* Twitter.framework */,
+				56FF52FA14BC728C002336BB /* Accounts.framework */,
 				56F7C53814BB31F900F6AC6B /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -462,6 +470,7 @@
 				56F7C54C14BB31F900F6AC6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56F7C54D14BB31F900F6AC6B /* Build configuration list for PBXNativeTarget "NowPlayingTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +479,7 @@
 				56F7C54F14BB31F900F6AC6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
