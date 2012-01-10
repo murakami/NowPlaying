@@ -9,6 +9,7 @@
 #import "FlipsideViewController.h"
 
 #import <CoreData/CoreData.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel  *songTitle;
 @property (strong, nonatomic) IBOutlet UILabel  *artist;
 @property (strong, nonatomic) IBOutlet UILabel  *albumTitle;
+@property (strong, nonatomic) MPMusicPlayerController   *musicPlayer;
 
 - (IBAction)tweet:(id)sender;
 

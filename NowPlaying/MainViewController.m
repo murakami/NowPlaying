@@ -6,10 +6,10 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
-#import <MediaPlayer/MediaPlayer.h>
 #import "MainViewController.h"
 
 @interface MainViewController ()
+- (void)didSongChanged:(NSNotification *)notification;
 @end
 
 @implementation MainViewController
@@ -18,6 +18,7 @@
 @synthesize songTitle = _songTitle;
 @synthesize artist = _artist;
 @synthesize albumTitle = _albumTitle;
+@synthesize musicPlayer = _musicPlayer;
 
 - (void)didReceiveMemoryWarning
 {
@@ -31,10 +32,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    _musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+    
+    [self didSongChanged:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSongChanged:) name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:self.musicPlayer];
+    [self.musicPlayer beginGeneratingPlaybackNotifications];
 }
 
 - (void)viewDidUnload
 {
+    [self.musicPlayer endGeneratingPlaybackNotifications];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    self.songTitle = nil;
+    self.artist = nil;
+    self.albumTitle = nil;
+    self.musicPlayer = nil;
+
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -43,28 +59,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self didSongChanged:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    MPMusicPlayerController *musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
-    if (musicPlayer.nowPlayingItem) {
-        NSLog(@"#nowplaying");
-        NSString    *title = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
-        self.songTitle.text = title;
-        NSLog(@"title: %@", title);
-        NSString    *artist = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
-        self.artist.text = artist;
-        NSLog(@"artist: %@", artist);
-        NSString    *albumTitle = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-        self.albumTitle.text = albumTitle;
-        NSLog(@"albumTitle: %@", albumTitle);
-    }
-    else {
-        NSLog(@"nowPlayingItem is nil.");
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -104,33 +105,24 @@
     TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
     
     // Set the initial tweet text. See the framework for additional properties that can be set.
-    NSMutableString *str = [[NSMutableString alloc] initWithString:@"Hello. This is a tweet."];
-    MPMusicPlayerController *musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
-    if (musicPlayer.nowPlayingItem) {
-        [str setString:@"#nowplaying"];
-        NSLog(@"#nowplaying");
-        NSString    *title = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
+    NSMutableString *str = [[NSMutableString alloc] initWithString:@"#nowplaying"];
+    if (self.musicPlayer.nowPlayingItem) {
+        NSString    *title = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
         if (title) {
             [str appendString:@" "];
             [str appendString:title];
         }
-        NSLog(@"title: %@", title);
-        NSString    *artist = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
+        NSString    *artist = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
         if (artist) {
             [str appendString:@" - "];
             [str appendString:artist];
         }
-        NSLog(@"artist: %@", artist);
-        NSString    *albumTitle = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+        NSString    *albumTitle = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         if (albumTitle) {
             [str appendString:@" ["];
             [str appendString:albumTitle];
             [str appendString:@"]"];
         }
-        NSLog(@"albumTitle: %@", albumTitle);
-    }
-    else {
-        NSLog(@"nowPlayingItem is nil.");
     }
     [tweetViewController setInitialText:str];
     
@@ -154,6 +146,7 @@
         /*
         [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
         */
+        NSLog(@"%@", output);
         
         // Dismiss the tweet composition view controller.
         [self dismissModalViewControllerAnimated:YES];
@@ -161,6 +154,23 @@
     
     // Present the tweet composition view controller modally.
     [self presentModalViewController:tweetViewController animated:YES];
+}
+
+- (void)didSongChanged:(NSNotification *)notification
+{
+    if (self.musicPlayer.nowPlayingItem) {
+        NSString    *title = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
+        self.songTitle.text = title;
+        NSString    *artist = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
+        self.artist.text = artist;
+        NSString    *albumTitle = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+        self.albumTitle.text = albumTitle;
+    }
+    else {
+        self.songTitle.text = @"(none)";
+        self.artist.text = @"(none)";
+        self.albumTitle.text = @"(none)";
+    }
 }
 
 @end
