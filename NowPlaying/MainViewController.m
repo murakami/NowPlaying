@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
 #import "MainViewController.h"
 
 @interface MainViewController ()
@@ -44,6 +45,18 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    MPMusicPlayerController *musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+    if (musicPlayer.nowPlayingItem) {
+        NSLog(@"#nowplaying");
+        NSString    *title = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
+        NSLog(@"title: %@", title);
+        NSString    *artist = [musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
+        NSLog(@"artist: %@", artist);
+    }
+    else {
+        NSLog(@"nowPlayingItem is nil.");
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
