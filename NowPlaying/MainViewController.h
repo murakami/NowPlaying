@@ -15,10 +15,11 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) IBOutlet UILabel  *songTitle;
-@property (strong, nonatomic) IBOutlet UILabel  *artist;
-@property (strong, nonatomic) IBOutlet UILabel  *albumTitle;
+@property (strong, nonatomic) NSManagedObjectContext    *managedObjectContext;
+@property (strong, nonatomic) IBOutlet UILabel          *songTitle;
+@property (strong, nonatomic) IBOutlet UILabel          *artist;
+@property (strong, nonatomic) IBOutlet UILabel          *albumTitle;
+@property (strong, nonatomic) IBOutlet UIImageView      *artworkImageView;
 @property (strong, nonatomic) MPMusicPlayerController   *musicPlayer;
 
 - (IBAction)tweet:(id)sender;

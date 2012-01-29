@@ -18,6 +18,7 @@
 @synthesize songTitle = _songTitle;
 @synthesize artist = _artist;
 @synthesize albumTitle = _albumTitle;
+@synthesize artworkImageView = _artworkImageView;
 @synthesize musicPlayer = _musicPlayer;
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +50,7 @@
     self.songTitle = nil;
     self.artist = nil;
     self.albumTitle = nil;
+    self.artworkImageView = nil;
     self.musicPlayer = nil;
 
     [super viewDidUnload];
@@ -109,7 +111,7 @@
     if (self.musicPlayer.nowPlayingItem) {
         NSString    *title = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
         if (title) {
-            [str appendString:@" "];
+            [str appendString:@" ♪ "];
             [str appendString:title];
         }
         NSString    *artist = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
@@ -165,6 +167,19 @@
         self.artist.text = artist;
         NSString    *albumTitle = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         self.albumTitle.text = albumTitle;
+        MPMediaItemArtwork  *artwork = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
+        if (artwork) {
+            UIImage *artworkImage = [artwork imageWithSize:self.artworkImageView.frame.size];
+            if (artworkImage) {
+                self.artworkImageView.image = artworkImage;
+            }
+            else {
+                self.artworkImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"none" ofType:@"png"]];
+            }
+        }
+        else {
+            self.artworkImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"none" ofType:@"png"]];
+        }
     }
     else {
         self.songTitle.text = @"(none)";
