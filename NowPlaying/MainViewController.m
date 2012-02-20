@@ -237,7 +237,7 @@
                                   bannerView.frame.size.width,
                                   bannerView.frame.size.height);
     self.infoButton.frame = CGRectMake(self.infoButton.frame.origin.x,
-                                      self.infoButton.frame.origin.y - bannerView.frame.size.height,
+                                      421.0 - bannerView.frame.size.height,
                                       self.infoButton.frame.size.width,
                                       self.infoButton.frame.size.height);
     [UIView commitAnimations];
