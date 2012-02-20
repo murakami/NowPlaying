@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1173"/>
     </dependencies>
     <scenes>
+        <!--Main View Controller-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -75,12 +76,14 @@
                         <outlet property="albumTitle" destination="M7R-0Q-Orw" id="ISb-fF-CxS"/>
                         <outlet property="artist" destination="oFo-uW-cVT" id="NSQ-rs-fIv"/>
                         <outlet property="artworkImageView" destination="vnF-nJ-fJR" id="sXb-ZO-56T"/>
+                        <outlet property="infoButton" destination="10" id="uj8-PA-bjk"/>
                         <outlet property="songTitle" destination="1PI-TT-ZXw" id="TQ2-4R-85G"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-51" y="182"/>
         </scene>
+        <!--Flipside View Controller-->
         <scene sceneID="9">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8" sceneMemberID="firstResponder"/>
@@ -109,9 +112,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright©2012 Bitz Co., Ltd.
-All rights reserved." lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="ffH-oY-rtO">
-                                <rect key="frame" x="45" y="398" width="231" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright©2012 Bitz Co., Ltd. All rights reserved." lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="ffH-oY-rtO">
+                                <rect key="frame" x="45" y="348" width="231" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -143,6 +145,7 @@ All rights reserved." lineBreakMode="tailTruncation" numberOfLines="2" minimumFo
                 <relationship kind="outlet" name="albumTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artist" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="songTitle" candidateClass="UILabel"/>
             </relationships>
         </class>

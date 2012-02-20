@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GADBannerView.h"
+#import "GADBannerViewDelegate.h"
 
 @class FlipsideViewController;
 
@@ -14,9 +16,10 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
 
-@interface FlipsideViewController : UIViewController
+@interface FlipsideViewController : UIViewController <GADBannerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate>    delegate;
+@property (strong, nonatomic) GADBannerView                                 *bannerView;
 
 - (IBAction)done:(id)sender;
 

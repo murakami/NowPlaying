@@ -12,15 +12,19 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
+#import "GADBannerView.h"
+#import "GADBannerViewDelegate.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, GADBannerViewDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext    *managedObjectContext;
+@property (strong, nonatomic) IBOutlet UIButton         *infoButton;
 @property (strong, nonatomic) IBOutlet UILabel          *songTitle;
 @property (strong, nonatomic) IBOutlet UILabel          *artist;
 @property (strong, nonatomic) IBOutlet UILabel          *albumTitle;
 @property (strong, nonatomic) IBOutlet UIImageView      *artworkImageView;
 @property (strong, nonatomic) MPMusicPlayerController   *musicPlayer;
+@property (strong, nonatomic) GADBannerView             *bannerView;
 
 - (IBAction)tweet:(id)sender;
 

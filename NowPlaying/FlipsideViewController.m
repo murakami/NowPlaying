@@ -14,6 +14,7 @@
 @implementation FlipsideViewController
 
 @synthesize delegate = _delegate;
+@synthesize bannerView = bannerView_;
 
 - (void)awakeFromNib
 {
@@ -32,6 +33,38 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Create a view of the standard size at the bottom of the screen.
+    self.bannerView = [[GADBannerView alloc]
+                       initWithFrame:CGRectMake(0.0,
+                                                self.view.frame.size.height -
+                                                GAD_SIZE_320x50.height,
+                                                GAD_SIZE_320x50.width,
+                                                GAD_SIZE_320x50.height)];
+
+    // Specify the ad's "unit identifier." This is your AdMob Publisher ID.
+    self.bannerView.adUnitID = @"a14f4244f3bf0f7";
+    
+    // Let the runtime know which UIViewController to restore after taking
+    // the user wherever the ad goes and add it to the view hierarchy.
+    self.bannerView.rootViewController = self;
+    [self.view addSubview:self.bannerView];
+    
+    // Initiate a generic request to load it with an ad.
+#ifdef	ADMOB_TESTDRIVE
+    GADRequest  *request = [GADRequest request];
+    
+    request.testDevices = [NSArray arrayWithObjects:
+                           GAD_SIMULATOR_ID,
+                           @"106cc33b2ebf0a0ca4ac485b14c8ac0c83b84415",
+                           @"4935d1b01126293b035587a1f360286e45dd8943",
+                           nil];
+    [bannerView_ loadRequest:request];
+#else   /* ADMOB_TESTDRIVE */
+    [self.bannerView loadRequest:[GADRequest request]];
+#endif  /* ADMOB_TESTDRIVE */
+    
+    self.bannerView.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -72,6 +105,27 @@
 - (IBAction)done:(id)sender
 {
     [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+#pragma mark -
+#pragma mark AdMobDelegate methods
+
+- (void)adViewDidReceiveAd:(GADBannerView *)bannerView
+{
+    DBGMSG(@"%s", __func__);
+    [UIView beginAnimations:@"BannerSlide" context:nil];
+    bannerView.frame = CGRectMake(0.0,
+                                  self.view.frame.size.height - bannerView.frame.size.height,
+                                  bannerView.frame.size.width,
+                                  bannerView.frame.size.height);
+    [UIView commitAnimations];
+}
+
+- (void)adView:(GADBannerView *)bannerView
+didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    DBGMSG(@"%s", __func__);
+    //DBGMSG(@"adView:didFailToReceiveAdWithError:%@", error localizedDescription]);
 }
 
 @end
