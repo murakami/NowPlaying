@@ -145,6 +145,7 @@
     
     // Set the initial tweet text. See the framework for additional properties that can be set.
     NSMutableString *str = [[NSMutableString alloc] initWithString:@"#nowplaying"];
+    UIImage *artworkImage = nil;
     if (self.musicPlayer.nowPlayingItem) {
         NSString    *title = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
         if (title) {
@@ -162,10 +163,14 @@
             [str appendString:albumTitle];
             [str appendString:@"]"];
         }
+        MPMediaItemArtwork  *artwork = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
+        if (artwork) {
+            artworkImage = [artwork imageWithSize:CGSizeMake(32.0, 32.0)];
+        }
     }
     [tweetViewController setInitialText:str];
-    if (self.artworkImageView.image) {
-        BOOL    result = [tweetViewController addImage:self.artworkImageView.image];
+    if (artworkImage) {
+        BOOL    result = [tweetViewController addImage:artworkImage];
         DBGMSG(@"addImage:%d", (int)result);
     }
     
