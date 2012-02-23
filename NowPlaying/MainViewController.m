@@ -164,6 +164,10 @@
         }
     }
     [tweetViewController setInitialText:str];
+    if (self.artworkImageView.image) {
+        BOOL    result = [tweetViewController addImage:self.artworkImageView.image];
+        DBGMSG(@"addImage:%d", (int)result);
+    }
     
     // Create the completion handler block.
     [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {

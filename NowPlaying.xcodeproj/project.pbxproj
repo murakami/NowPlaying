@@ -53,7 +53,7 @@
 		5671B8DD14F27D310066A4C6 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
 		5671B8DE14F27D310066A4C6 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
 		5671B8DF14F27D310066A4C6 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
-		5671B8E014F27D310066A4C6 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; name = libGoogleAdMobAds.a; path = NowPlaying/libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		5671B8E014F27D310066A4C6 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = NowPlaying/libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		5671B8E414F27DAD0066A4C6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5671B8E614F27DCA0066A4C6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5671B8E814F27DDF0066A4C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -272,7 +272,7 @@
 		56F7C50514BB31F800F6AC6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "ビッツ有限会社";
 			};
 			buildConfigurationList = 56F7C50814BB31F800F6AC6B /* Build configuration list for PBXProject "NowPlaying" */;
