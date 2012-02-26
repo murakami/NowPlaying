@@ -10,4 +10,12 @@
 
 @interface Document : NSObject
 
+@property (assign, nonatomic) BOOL  selectedSongTitle;
+@property (assign, nonatomic) BOOL  selectedArtist;
+@property (assign, nonatomic) BOOL  selectedAlbumTitle;
+@property (assign, nonatomic) BOOL  selectedArtwork;
+
+- (void)clearDefaults;
+- (void)updateDefaults;
+- (void)loadDefaults;
 @end

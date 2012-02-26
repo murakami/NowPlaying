@@ -6,15 +6,23 @@
 //  Copyright (c) 2012年 ビッツ有限会社. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 #import "MainViewController.h"
 
 @interface MainViewController ()
+- (void)toggleSongTitle;
+- (void)toggleArtist;
+- (void)toggleAlbumTitle;
+- (void)toggleArtwork;
+- (void)updateItem;
 - (void)didSongChanged:(NSNotification *)notification;
 @end
 
 @implementation MainViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize document = _document;
 @synthesize infoButton = _infoButton;
 @synthesize songTitle = _songTitle;
 @synthesize artist = _artist;
@@ -35,6 +43,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    AppDelegate	*appl = nil;
+	appl = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	self.document = appl.document;
+    
+    self.artworkImageView.layer.masksToBounds = YES;
+    self.artworkImageView.layer.cornerRadius = 4.0f;
+    self.artworkImageView.layer.borderWidth = 3.0f;
+    self.artworkImageView.layer.borderColor = [[UIColor grayColor] CGColor];
+    [self updateItem];
     
     _musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
     
@@ -78,6 +96,8 @@
 
 - (void)viewDidUnload
 {
+    self.document = nil;
+    
     [self.musicPlayer endGeneratingPlaybackNotifications];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
@@ -176,6 +196,7 @@
             if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
                 && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
                 DBGMSG(@"    in!");
+                [self toggleSongTitle];
             }
             else {
                 DBGMSG(@"    out!");
@@ -186,6 +207,7 @@
             if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
                 && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
                 DBGMSG(@"    in!");
+                [self toggleArtist];
             }
             else {
                 DBGMSG(@"    out!");
@@ -196,6 +218,7 @@
             if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
                 && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
                 DBGMSG(@"    in!");
+                [self toggleAlbumTitle];
             }
             else {
                 DBGMSG(@"    out!");
@@ -206,6 +229,7 @@
             if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
                 && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
                 DBGMSG(@"    in!");
+                [self toggleArtwork];
             }
             else {
                 DBGMSG(@"    out!");
@@ -222,6 +246,7 @@
 }
 
 #pragma mark - Tweet
+
 - (IBAction)tweet:(id)sender
 {
     // Set up the built-in twitter composition view controller.
@@ -232,23 +257,23 @@
     UIImage *artworkImage = nil;
     if (self.musicPlayer.nowPlayingItem) {
         NSString    *title = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
-        if (title) {
+        if (title && self.document.selectedSongTitle) {
             [str appendString:@" ♪ "];
             [str appendString:title];
         }
         NSString    *artist = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
-        if (artist) {
+        if (artist && self.document.selectedArtist) {
             [str appendString:@" - "];
             [str appendString:artist];
         }
         NSString    *albumTitle = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
-        if (albumTitle) {
+        if (albumTitle && self.document.selectedAlbumTitle) {
             [str appendString:@" ["];
             [str appendString:albumTitle];
             [str appendString:@"]"];
         }
         MPMediaItemArtwork  *artwork = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
-        if (artwork) {
+        if (artwork && self.document.selectedArtwork) {
             artworkImage = [artwork imageWithSize:CGSizeMake(32.0, 32.0)];
         }
     }
@@ -286,6 +311,85 @@
     
     // Present the tweet composition view controller modally.
     [self presentModalViewController:tweetViewController animated:YES];
+}
+
+#pragma mark - extensions
+
+- (void)toggleSongTitle
+{
+    if (self.document.selectedSongTitle) {
+        self.document.selectedSongTitle = NO;
+        self.songTitle.textColor = [UIColor lightGrayColor];
+    }
+    else {
+        self.document.selectedSongTitle = YES;
+        self.songTitle.textColor = [UIColor whiteColor];
+    }
+    [self updateItem];
+}
+
+- (void)toggleArtist
+{
+    if (self.document.selectedArtist) {
+        self.document.selectedArtist = NO;
+    }
+    else {
+        self.document.selectedArtist = YES;
+    }
+    [self updateItem];
+}
+
+- (void)toggleAlbumTitle
+{
+    if (self.document.selectedAlbumTitle) {
+        self.document.selectedAlbumTitle = NO;
+    }
+    else {
+        self.document.selectedAlbumTitle = YES;
+    }
+    [self updateItem];
+}
+
+- (void)toggleArtwork
+{
+    if (self.document.selectedArtwork) {
+        self.document.selectedArtwork = NO;
+    }
+    else {
+        self.document.selectedArtwork = YES;
+    }
+    [self updateItem];
+}
+
+- (void)updateItem
+{
+    if (self.document.selectedSongTitle) {
+        self.songTitle.textColor = [UIColor blueColor];
+    }
+    else {
+        self.songTitle.textColor = [UIColor lightGrayColor];
+    }
+    
+    if (self.document.selectedArtist) {
+        self.artist.textColor = [UIColor blueColor];
+    }
+    else {
+        self.artist.textColor = [UIColor lightGrayColor];
+    }
+    
+    if (self.document.selectedAlbumTitle) {
+        self.albumTitle.textColor = [UIColor blueColor];
+    }
+    else {
+        self.albumTitle.textColor = [UIColor lightGrayColor];
+    }
+    
+    if (self.document.selectedArtwork) {
+        self.artworkImageView.layer.borderColor = [[UIColor blueColor] CGColor];
+    }
+    else {
+        self.artworkImageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    }
 }
 
 - (void)didSongChanged:(NSNotification *)notification
