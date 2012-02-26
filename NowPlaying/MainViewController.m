@@ -137,6 +137,90 @@
     }
 }
 
+#pragma mark - Touch
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch *touch in [touches allObjects]) {
+        CGPoint currentPoint = [touch locationInView:touch.view];
+        if (touch.view == self.songTitle) {
+            DBGMSG(@"%s, songTitle, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+        }
+        else if (touch.view == self.artist) {
+            DBGMSG(@"%s, artist, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+        }
+        else if (touch.view == self.albumTitle) {
+            DBGMSG(@"%s, albumTitle, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+        }
+        else if (touch.view == self.artworkImageView) {
+            DBGMSG(@"%s, artworkImageView, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+        }
+        else {
+            DBGMSG(@"%s, none, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+        }
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch *touch in [touches allObjects]) {
+        CGPoint currentPoint = [touch locationInView:touch.view];
+        CGRect  bounds = touch.view.bounds;
+        CGSize  size = bounds.size;
+        if (touch.view == self.songTitle) {
+            DBGMSG(@"%s, songTitle, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+            if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
+                && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
+                DBGMSG(@"    in!");
+            }
+            else {
+                DBGMSG(@"    out!");
+            }
+        }
+        else if (touch.view == self.artist) {
+            DBGMSG(@"%s, artist, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+            if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
+                && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
+                DBGMSG(@"    in!");
+            }
+            else {
+                DBGMSG(@"    out!");
+            }
+        }
+        else if (touch.view == self.albumTitle) {
+            DBGMSG(@"%s, albumTitle, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+            if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
+                && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
+                DBGMSG(@"    in!");
+            }
+            else {
+                DBGMSG(@"    out!");
+            }
+        }
+        else if (touch.view == self.artworkImageView) {
+            DBGMSG(@"%s, artworkImageView, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+            if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
+                && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
+                DBGMSG(@"    in!");
+            }
+            else {
+                DBGMSG(@"    out!");
+            }
+        }
+        else {
+            DBGMSG(@"%s, none, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+        }
+    }
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+}
+
 #pragma mark - Tweet
 - (IBAction)tweet:(id)sender
 {

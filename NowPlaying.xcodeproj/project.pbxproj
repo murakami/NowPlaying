@@ -12,6 +12,7 @@
 		5671B8E514F27DAD0066A4C6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5671B8E414F27DAD0066A4C6 /* AudioToolbox.framework */; };
 		5671B8E714F27DCA0066A4C6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5671B8E614F27DCA0066A4C6 /* MessageUI.framework */; };
 		5671B8E914F27DDF0066A4C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5671B8E814F27DDF0066A4C6 /* SystemConfiguration.framework */; };
+		56E5230714FA1FA400630F7C /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E5230614FA1FA400630F7C /* Document.m */; };
 		56F7C51314BB31F800F6AC6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C51214BB31F800F6AC6B /* UIKit.framework */; };
 		56F7C51514BB31F800F6AC6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C51414BB31F800F6AC6B /* Foundation.framework */; };
 		56F7C51714BB31F800F6AC6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C51614BB31F800F6AC6B /* CoreGraphics.framework */; };
@@ -57,6 +58,8 @@
 		5671B8E414F27DAD0066A4C6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5671B8E614F27DCA0066A4C6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5671B8E814F27DDF0066A4C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		56E5230514FA1FA400630F7C /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		56E5230614FA1FA400630F7C /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		56F7C50E14BB31F800F6AC6B /* NowPlaying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowPlaying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F7C51214BB31F800F6AC6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56F7C51414BB31F800F6AC6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -182,6 +185,8 @@
 				56F7C52F14BB31F900F6AC6B /* FlipsideViewController.h */,
 				56F7C53014BB31F900F6AC6B /* FlipsideViewController.m */,
 				56F7C52914BB31F800F6AC6B /* NowPlaying.xcdatamodeld */,
+				56E5230514FA1FA400630F7C /* Document.h */,
+				56E5230614FA1FA400630F7C /* Document.m */,
 				5671B8E314F27D4E0066A4C6 /* GoogleAdMobAdsSDKiOS */,
 				56F7C51B14BB31F800F6AC6B /* Supporting Files */,
 				56F7C55A14BB32B900F6AC6B /* Resources */,
@@ -341,6 +346,7 @@
 				56F7C52B14BB31F800F6AC6B /* NowPlaying.xcdatamodeld in Sources */,
 				56F7C52E14BB31F900F6AC6B /* MainViewController.m in Sources */,
 				56F7C53114BB31F900F6AC6B /* FlipsideViewController.m in Sources */,
+				56E5230714FA1FA400630F7C /* Document.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
