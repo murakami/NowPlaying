@@ -249,6 +249,8 @@
 
 - (IBAction)tweet:(id)sender
 {
+    BOOL    flagEnable = NO;
+
     // Set up the built-in twitter composition view controller.
     TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
     
@@ -260,17 +262,20 @@
         if (title && self.document.selectedSongTitle) {
             [str appendString:@" ♪ "];
             [str appendString:title];
+            flagEnable = YES;
         }
         NSString    *artist = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
         if (artist && self.document.selectedArtist) {
             [str appendString:@" - "];
             [str appendString:artist];
+            flagEnable = YES;
         }
         NSString    *albumTitle = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         if (albumTitle && self.document.selectedAlbumTitle) {
             [str appendString:@" ["];
             [str appendString:albumTitle];
             [str appendString:@"]"];
+            flagEnable = YES;
         }
         MPMediaItemArtwork  *artwork = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
         if (artwork && self.document.selectedArtwork) {
@@ -281,6 +286,11 @@
     if (artworkImage) {
         BOOL    result = [tweetViewController addImage:artworkImage];
         DBGMSG(@"addImage:%d", (int)result);
+    }
+    
+    if (! flagEnable) {
+        DBGMSG(@"%s, (none)", __func__);
+        return;
     }
     
     // Create the completion handler block.
