@@ -405,13 +405,31 @@
 - (void)didSongChanged:(NSNotification *)notification
 {
     if (self.musicPlayer.nowPlayingItem) {
+        CATransition    *animation = [CATransition animation];
+        [animation setDelegate:self];
+        [animation setDuration:1.0f];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [animation setType:kCATransitionPush];
+        [animation setSubtype:kCATransitionFromLeft];
+
         NSString    *title = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyTitle];
         self.songTitle.text = title;
         NSString    *artist = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtist];
         self.artist.text = artist;
         NSString    *albumTitle = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         self.albumTitle.text = albumTitle;
+
+        [[self.songTitle layer] addAnimation:animation forKey:@"title"];
+        [[self.artist layer] addAnimation:animation forKey:@"artist"];
+        [[self.albumTitle layer] addAnimation:animation forKey:@"album title"];
+        
         MPMediaItemArtwork  *artwork = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
+        [UIView beginAnimations:@"artwork" context:nil];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft
+                               forView:self.artworkImageView
+                                 cache:YES];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDuration:1.0];
         if (artwork) {
             UIImage *artworkImage = [artwork imageWithSize:self.artworkImageView.frame.size];
             if (artworkImage) {
@@ -424,6 +442,7 @@
         else {
             self.artworkImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"none" ofType:@"png"]];
         }
+        [UIView commitAnimations];
     }
     else {
         self.songTitle.text = @"(none)";
