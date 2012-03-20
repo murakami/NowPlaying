@@ -165,7 +165,9 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in [touches allObjects]) {
+#ifdef	DEBUG
         CGPoint currentPoint = [touch locationInView:touch.view];
+#endif  /* DEBUG */
         if (touch.view == self.songTitle) {
             DBGMSG(@"%s, songTitle, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
         }
@@ -305,7 +307,9 @@
     }
     [tweetViewController setInitialText:str];
     if (artworkImage) {
+#ifdef  DEBUG
         BOOL    result = [tweetViewController addImage:artworkImage];
+#endif  /* DEBUG */
         DBGMSG(@"addImage:%d", (int)result);
     }
     
