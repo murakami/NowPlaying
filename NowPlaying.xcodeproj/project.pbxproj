@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562419E515186753006495D2 /* star00.png in Resources */ = {isa = PBXBuildFile; fileRef = 562419E115186753006495D2 /* star00.png */; };
+		562419E615186753006495D2 /* star01.png in Resources */ = {isa = PBXBuildFile; fileRef = 562419E215186753006495D2 /* star01.png */; };
+		562419E715186753006495D2 /* star02.png in Resources */ = {isa = PBXBuildFile; fileRef = 562419E315186753006495D2 /* star02.png */; };
+		562419E815186753006495D2 /* star03.png in Resources */ = {isa = PBXBuildFile; fileRef = 562419E415186753006495D2 /* star03.png */; };
 		563E0B3614D58BF100166282 /* none.png in Resources */ = {isa = PBXBuildFile; fileRef = 563E0B3514D58BF100166282 /* none.png */; };
 		5671B8E114F27D310066A4C6 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5671B8E014F27D310066A4C6 /* libGoogleAdMobAds.a */; };
 		5671B8E514F27DAD0066A4C6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5671B8E414F27DAD0066A4C6 /* AudioToolbox.framework */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		562419E115186753006495D2 /* star00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star00.png; sourceTree = "<group>"; };
+		562419E215186753006495D2 /* star01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star01.png; sourceTree = "<group>"; };
+		562419E315186753006495D2 /* star02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star02.png; sourceTree = "<group>"; };
+		562419E415186753006495D2 /* star03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star03.png; sourceTree = "<group>"; };
 		563E0B3514D58BF100166282 /* none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = none.png; sourceTree = "<group>"; };
 		5671B8DA14F27D310066A4C6 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
 		5671B8DB14F27D310066A4C6 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
@@ -238,6 +246,10 @@
 				563E0B3514D58BF100166282 /* none.png */,
 				56E5231614FA666200630F7C /* 23-bird.png */,
 				56E5231714FA666200630F7C /* 23-bird@2x.png */,
+				562419E115186753006495D2 /* star00.png */,
+				562419E215186753006495D2 /* star01.png */,
+				562419E315186753006495D2 /* star02.png */,
+				562419E415186753006495D2 /* star03.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -319,6 +331,10 @@
 				563E0B3614D58BF100166282 /* none.png in Resources */,
 				56E5231814FA666200630F7C /* 23-bird.png in Resources */,
 				56E5231914FA666200630F7C /* 23-bird@2x.png in Resources */,
+				562419E515186753006495D2 /* star00.png in Resources */,
+				562419E615186753006495D2 /* star01.png in Resources */,
+				562419E715186753006495D2 /* star02.png in Resources */,
+				562419E815186753006495D2 /* star03.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
