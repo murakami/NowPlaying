@@ -111,7 +111,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NwoPlaying" lineBreakMode="tailTruncation" minimumFontSize="10" id="JcH-00-Ywv">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NowPlaying" lineBreakMode="tailTruncation" minimumFontSize="10" id="JcH-00-Ywv">
                                 <rect key="frame" x="115" y="64" width="91" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
