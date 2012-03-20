@@ -17,6 +17,7 @@
 @synthesize selectedArtist = _selectedArtist;
 @synthesize selectedAlbumTitle = _selectedAlbumTitle;
 @synthesize selectedArtwork = _selectedArtwork;
+@synthesize starsNum = _starsNum;
 
 - (id)init
 {
@@ -26,6 +27,7 @@
         self.selectedArtist = YES;
         self.selectedAlbumTitle = YES;
         self.selectedArtwork = NO;
+        self.starsNum = 0;
 	}
 	return self;
 }

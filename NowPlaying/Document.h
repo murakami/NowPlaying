@@ -10,10 +10,11 @@
 
 @interface Document : NSObject
 
-@property (assign, nonatomic) BOOL  selectedSongTitle;
-@property (assign, nonatomic) BOOL  selectedArtist;
-@property (assign, nonatomic) BOOL  selectedAlbumTitle;
-@property (assign, nonatomic) BOOL  selectedArtwork;
+@property (assign, nonatomic) BOOL          selectedSongTitle;
+@property (assign, nonatomic) BOOL          selectedArtist;
+@property (assign, nonatomic) BOOL          selectedAlbumTitle;
+@property (assign, nonatomic) BOOL          selectedArtwork;
+@property (assign, nonatomic) NSUInteger    starsNum;
 
 - (void)clearDefaults;
 - (void)updateDefaults;

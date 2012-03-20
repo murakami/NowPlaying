@@ -15,6 +15,7 @@
 - (void)toggleArtist;
 - (void)toggleAlbumTitle;
 - (void)toggleArtwork;
+- (void)toggleStars;
 - (void)updateItem;
 - (void)didSongChanged:(NSNotification *)notification;
 @end
@@ -28,6 +29,7 @@
 @synthesize artist = _artist;
 @synthesize albumTitle = _albumTitle;
 @synthesize artworkImageView = _artworkImageView;
+@synthesize starsImageView = _starsImageView;
 @synthesize musicPlayer = _musicPlayer;
 @synthesize bannerView = bannerView_;
 
@@ -105,6 +107,7 @@
     self.artist = nil;
     self.albumTitle = nil;
     self.artworkImageView = nil;
+    self.starsImageView = nil;
     self.musicPlayer = nil;
     
     self.bannerView.delegate = nil;
@@ -175,6 +178,9 @@
         else if (touch.view == self.artworkImageView) {
             DBGMSG(@"%s, artworkImageView, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
         }
+        else if (touch.view == self.starsImageView) {
+            DBGMSG(@"%s, starsImageView, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+        }
         else {
             DBGMSG(@"%s, none, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
         }
@@ -235,6 +241,17 @@
                 DBGMSG(@"    out!");
             }
         }
+        else if (touch.view == self.starsImageView) {
+            DBGMSG(@"%s, starsImageView, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
+            if ((0.0 <= currentPoint.x) && (currentPoint.x < size.width)
+                && (0.0 <= currentPoint.y) && (currentPoint.y < size.height)) {
+                DBGMSG(@"    in!");
+                [self toggleStars];
+            }
+            else {
+                DBGMSG(@"    out!");
+            }
+        }
         else {
             DBGMSG(@"%s, none, location(%5.1f, %5.1f)", __func__, currentPoint.x, currentPoint.y);
         }
@@ -277,6 +294,10 @@
             [str appendString:@"]"];
             flagEnable = YES;
         }
+        if (self.document.starsNum == 0)        [str appendString:@" ★★★"];
+        else if (self.document.starsNum == 1)   [str appendString:@" ☆★★"];
+        else if (self.document.starsNum == 2)   [str appendString:@" ☆☆★"];
+        else                                    [str appendString:@" ☆☆☆"];
         MPMediaItemArtwork  *artwork = [self.musicPlayer.nowPlayingItem valueForProperty:MPMediaItemPropertyArtwork];
         if (artwork && self.document.selectedArtwork) {
             artworkImage = [artwork imageWithSize:CGSizeMake(32.0, 32.0)];
@@ -371,6 +392,26 @@
     [self updateItem];
 }
 
+- (void)toggleStars
+{
+    if (self.document.starsNum == 0) {
+        self.document.starsNum++;
+        self.starsImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"star01" ofType:@"png"]];
+    }
+    else if (self.document.starsNum == 1) {
+        self.document.starsNum++;
+        self.starsImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"star02" ofType:@"png"]];
+    }
+    else if (self.document.starsNum == 2) {
+        self.document.starsNum++;
+        self.starsImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"star03" ofType:@"png"]];
+    }
+    else {
+        self.document.starsNum = 0;
+        self.starsImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"star00" ofType:@"png"]];
+    }
+}
+
 - (void)updateItem
 {
     if (self.document.selectedSongTitle) {
@@ -449,6 +490,8 @@
         self.artist.text = @"(none)";
         self.albumTitle.text = @"(none)";
     }
+    self.document.starsNum = 0;
+    self.starsImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"star00" ofType:@"png"]];
 }
 
 #pragma mark -

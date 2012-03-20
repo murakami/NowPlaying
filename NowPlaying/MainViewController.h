@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UILabel          *artist;
 @property (strong, nonatomic) IBOutlet UILabel          *albumTitle;
 @property (strong, nonatomic) IBOutlet UIImageView      *artworkImageView;
+@property (strong, nonatomic) IBOutlet UIImageView      *starsImageView;
 @property (strong, nonatomic) MPMusicPlayerController   *musicPlayer;
 @property (strong, nonatomic) GADBannerView             *bannerView;
 

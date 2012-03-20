@@ -46,28 +46,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="1PI-TT-ZXw">
-                                <rect key="frame" x="20" y="220" width="280" height="42"/>
+                                <rect key="frame" x="20" y="156" width="280" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="oFo-uW-cVT">
-                                <rect key="frame" x="20" y="270" width="280" height="42"/>
+                                <rect key="frame" x="20" y="206" width="280" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="M7R-0Q-Orw">
-                                <rect key="frame" x="20" y="320" width="280" height="42"/>
+                                <rect key="frame" x="20" y="256" width="280" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView contentMode="scaleToFill" id="vnF-nJ-fJR">
-                                <rect key="frame" x="20" y="20" width="192" height="192"/>
+                                <rect key="frame" x="20" y="20" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" image="star00.png" id="gAh-sS-rWL">
+                                <rect key="frame" x="185" y="120" width="84" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -79,6 +83,7 @@
                         <outlet property="artworkImageView" destination="vnF-nJ-fJR" id="sXb-ZO-56T"/>
                         <outlet property="infoButton" destination="10" id="uj8-PA-bjk"/>
                         <outlet property="songTitle" destination="1PI-TT-ZXw" id="TQ2-4R-85G"/>
+                        <outlet property="starsImageView" destination="gAh-sS-rWL" id="Nfc-oY-BVG"/>
                     </connections>
                 </viewController>
             </objects>
@@ -133,6 +138,7 @@
     </scenes>
     <resources>
         <image name="23-bird.png" width="25" height="24"/>
+        <image name="star00.png" width="168" height="56"/>
     </resources>
     <classes>
         <class className="FlipsideViewController" superclassName="UIViewController">
@@ -151,6 +157,7 @@
                 <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="songTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starsImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>
