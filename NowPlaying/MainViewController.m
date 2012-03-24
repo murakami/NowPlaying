@@ -143,7 +143,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    /* return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown); */
+    return (interfaceOrientation == UIDeviceOrientationPortrait);
 }
 
 #pragma mark - Flipside View
@@ -296,7 +297,7 @@
             [str appendString:@"]"];
             flagEnable = YES;
         }
-        if (self.document.starsNum == 0)        [str appendString:@" ★★★"];
+        if (self.document.starsNum == 0)        /* [str appendString:@" ★★★"] */;
         else if (self.document.starsNum == 1)   [str appendString:@" ☆★★"];
         else if (self.document.starsNum == 2)   [str appendString:@" ☆☆★"];
         else                                    [str appendString:@" ☆☆☆"];
