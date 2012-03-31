@@ -309,8 +309,9 @@
     [tweetViewController setInitialText:str];
     if (artworkImage) {
 #ifdef  DEBUG
-        BOOL    result = [tweetViewController addImage:artworkImage];
+        BOOL    result =
 #endif  /* DEBUG */
+        [tweetViewController addImage:artworkImage];
         DBGMSG(@"addImage:%d", (int)result);
     }
     
