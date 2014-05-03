@@ -59,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		560107571914DF5200384D70 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		560107571914DF5200384D70 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		562419E115186753006495D2 /* star00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star00.png; sourceTree = "<group>"; };
 		562419E215186753006495D2 /* star01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star01.png; sourceTree = "<group>"; };
 		562419E315186753006495D2 /* star02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star02.png; sourceTree = "<group>"; };
