@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560107581914DF5200384D70 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560107571914DF5200384D70 /* Default-568h@2x.png */; };
 		562419E515186753006495D2 /* star00.png in Resources */ = {isa = PBXBuildFile; fileRef = 562419E115186753006495D2 /* star00.png */; };
 		562419E615186753006495D2 /* star01.png in Resources */ = {isa = PBXBuildFile; fileRef = 562419E215186753006495D2 /* star01.png */; };
 		562419E715186753006495D2 /* star02.png in Resources */ = {isa = PBXBuildFile; fileRef = 562419E315186753006495D2 /* star02.png */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		560107571914DF5200384D70 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		562419E115186753006495D2 /* star00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star00.png; sourceTree = "<group>"; };
 		562419E215186753006495D2 /* star01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star01.png; sourceTree = "<group>"; };
 		562419E315186753006495D2 /* star02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star02.png; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				56E5230614FA1FA400630F7C /* Document.m */,
 				56C7D495151891A6004AAFF8 /* Icon.png */,
 				56C7D496151891A6004AAFF8 /* Icon@2x.png */,
+				560107571914DF5200384D70 /* Default-568h@2x.png */,
 				5671B8E314F27D4E0066A4C6 /* GoogleAdMobAdsSDKiOS */,
 				56F7C51B14BB31F800F6AC6B /* Supporting Files */,
 				56F7C55A14BB32B900F6AC6B /* Resources */,
@@ -311,7 +314,8 @@
 		56F7C50514BB31F800F6AC6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "ビッツ有限会社";
 			};
 			buildConfigurationList = 56F7C50814BB31F800F6AC6B /* Build configuration list for PBXProject "NowPlaying" */;
@@ -345,6 +349,7 @@
 				56E5231914FA666200630F7C /* 23-bird@2x.png in Resources */,
 				562419E515186753006495D2 /* star00.png in Resources */,
 				562419E615186753006495D2 /* star01.png in Resources */,
+				560107581914DF5200384D70 /* Default-568h@2x.png in Resources */,
 				562419E715186753006495D2 /* star02.png in Resources */,
 				562419E815186753006495D2 /* star03.png in Resources */,
 				56C7D497151891A6004AAFF8 /* Icon.png in Resources */,
@@ -444,14 +449,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bitz Co., Ltd.";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4024E271-5C33-4A18-82B3-96710FABBDBB";
@@ -497,8 +511,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -510,9 +529,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -521,14 +545,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bitz Co., Ltd.";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F18AEE39-3F00-41DA-8B66-A4D14E4F0661";
