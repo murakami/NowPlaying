@@ -23,8 +23,8 @@
 		56C7D49D15189E80004AAFF8 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C7D49B15189E80004AAFF8 /* info@2x.png */; };
 		56E5230714FA1FA400630F7C /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E5230614FA1FA400630F7C /* Document.m */; };
 		56E5231114FA5F8200630F7C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E5231014FA5F8200630F7C /* QuartzCore.framework */; };
-		56E5231814FA666200630F7C /* 23-bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E5231614FA666200630F7C /* 23-bird.png */; };
-		56E5231914FA666200630F7C /* 23-bird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E5231714FA666200630F7C /* 23-bird@2x.png */; };
+		56E5231814FA666200630F7C /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E5231614FA666200630F7C /* bird.png */; };
+		56E5231914FA666200630F7C /* bird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E5231714FA666200630F7C /* bird@2x.png */; };
 		56F7C51314BB31F800F6AC6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C51214BB31F800F6AC6B /* UIKit.framework */; };
 		56F7C51514BB31F800F6AC6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C51414BB31F800F6AC6B /* Foundation.framework */; };
 		56F7C51714BB31F800F6AC6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7C51614BB31F800F6AC6B /* CoreGraphics.framework */; };
@@ -82,8 +82,8 @@
 		56E5230514FA1FA400630F7C /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		56E5230614FA1FA400630F7C /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		56E5231014FA5F8200630F7C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		56E5231614FA666200630F7C /* 23-bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "23-bird.png"; sourceTree = "<group>"; };
-		56E5231714FA666200630F7C /* 23-bird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "23-bird@2x.png"; sourceTree = "<group>"; };
+		56E5231614FA666200630F7C /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		56E5231714FA666200630F7C /* bird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird@2x.png"; sourceTree = "<group>"; };
 		56F7C50E14BB31F800F6AC6B /* NowPlaying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowPlaying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F7C51214BB31F800F6AC6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56F7C51414BB31F800F6AC6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -257,8 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				563E0B3514D58BF100166282 /* none.png */,
-				56E5231614FA666200630F7C /* 23-bird.png */,
-				56E5231714FA666200630F7C /* 23-bird@2x.png */,
+				56E5231614FA666200630F7C /* bird.png */,
+				56E5231714FA666200630F7C /* bird@2x.png */,
 				562419E115186753006495D2 /* star00.png */,
 				562419E215186753006495D2 /* star01.png */,
 				562419E315186753006495D2 /* star02.png */,
@@ -345,8 +345,8 @@
 				56F7C52814BB31F800F6AC6B /* MainStoryboard.storyboard in Resources */,
 				56F7C55114BB325A00F6AC6B /* README in Resources */,
 				563E0B3614D58BF100166282 /* none.png in Resources */,
-				56E5231814FA666200630F7C /* 23-bird.png in Resources */,
-				56E5231914FA666200630F7C /* 23-bird@2x.png in Resources */,
+				56E5231814FA666200630F7C /* bird.png in Resources */,
+				56E5231914FA666200630F7C /* bird@2x.png in Resources */,
 				562419E515186753006495D2 /* star00.png in Resources */,
 				562419E615186753006495D2 /* star01.png in Resources */,
 				560107581914DF5200384D70 /* Default-568h@2x.png in Resources */,
